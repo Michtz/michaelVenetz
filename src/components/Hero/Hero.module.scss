@@ -1,0 +1,96 @@
+@use '../variables' as *;
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-12 $space-6;
+  background-color: $color-background;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-6;
+  width: 100%;
+  max-width: $container-max;
+}
+
+.name {
+  font-family: $font-sans;
+  font-size: $font-4xl;
+  font-weight: 700;
+  line-height: 1.1;
+  color: $color-text-primary;
+
+  // Accent underline detail
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.15em;
+    width: 2.5rem;
+    height: 0.18rem;
+    background-color: $color-accent;
+    border-radius: 2px;
+  }
+
+  @media (min-width: $bp-md) {
+    font-size: clamp($font-4xl, 6vw, 4rem);
+  }
+}
+
+.headline {
+  font-family: $font-sans;
+  font-size: $font-xl;
+  font-weight: 400;
+  color: $color-text-secondary;
+  margin: 0;
+
+  @media (min-width: $bp-md) {
+    font-size: $font-2xl;
+  }
+}
+
+.sub {
+  font-family: $font-sans;
+  font-size: $font-base;
+  line-height: 1.75;
+  color: $color-text-secondary;
+  max-width: 600px;
+  margin: 0;
+
+  @media (min-width: $bp-md) {
+    font-size: $font-lg;
+  }
+}
+
+.cta {
+  display: inline-block;
+  padding: $space-3 $space-8;
+  font-family: $font-sans;
+  font-size: $font-base;
+  font-weight: 500;
+  color: $color-text-primary;
+  background-color: $color-accent;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 200ms ease, transform 150ms ease;
+  margin-top: $space-2;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-accent-hover;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-accent-hover;
+    outline-offset: 3px;
+  }
+}
