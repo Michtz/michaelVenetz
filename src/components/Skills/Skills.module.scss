@@ -1,0 +1,127 @@
+@use '../variables' as *;
+
+// ─── Section wrapper ─────────────────────────────────────────────────────────
+
+.skills {
+  padding: $space-16 $space-6;
+  background-color: $color-background;
+}
+
+// ─── Container ───────────────────────────────────────────────────────────────
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+}
+
+// ─── Section heading ─────────────────────────────────────────────────────────
+
+.heading {
+  font-family: $font-sans;
+  font-size: $font-3xl;
+  font-weight: 700;
+  color: $color-text-primary;
+  margin: 0 0 $space-12 0;
+
+  @media (min-width: $bp-md) {
+    font-size: $font-4xl;
+  }
+}
+
+// ─── Subsections list ────────────────────────────────────────────────────────
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+}
+
+// ─── Individual subsection ───────────────────────────────────────────────────
+
+.subsection {
+  & + & {
+    padding-top: $space-12;
+    border-top: 1px solid $color-border;
+  }
+}
+
+.subsectionHeading {
+  font-family: $font-sans;
+  font-size: $font-xl;
+  font-weight: 500;
+  color: $color-text-primary;
+  margin: 0 0 $space-2 0;
+}
+
+.description {
+  font-family: $font-sans;
+  font-size: $font-sm;
+  line-height: 1.7;
+  color: $color-text-secondary;
+  margin: 0 0 $space-8 0;
+  max-width: 640px;
+}
+
+// ─── Groups grid ─────────────────────────────────────────────────────────────
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+
+  @media (min-width: $bp-md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-8;
+  }
+}
+
+// ─── Single skill group ───────────────────────────────────────────────────────
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+// ─── Category label ───────────────────────────────────────────────────────────
+
+.categoryLabel {
+  display: block;
+  font-family: $font-sans;
+  font-size: $font-xs;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-text-secondary;
+}
+
+// ─── Chip row ────────────────────────────────────────────────────────────────
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+// ─── Individual chip ─────────────────────────────────────────────────────────
+
+.chip {
+  display: inline-block;
+  font-family: $font-sans;
+  font-size: $font-sm;
+  line-height: 1;
+  padding: $space-1 $space-3;
+  border: 1px solid $color-border;
+  border-radius: 9999px;
+  color: $color-text-secondary;
+  background: transparent;
+  transition: border-color 150ms ease, color 150ms ease;
+  cursor: default;
+  user-select: none;
+
+  &:hover {
+    border-color: $color-accent;
+    color: $color-text-primary;
+  }
+}
