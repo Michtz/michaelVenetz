@@ -8,7 +8,7 @@ const Hero: FC = () => {
         <h1 className={styles.name}>Michael Venetz</h1>
         <p className={styles.headline}>Frontend Developer &amp; Designer</p>
         <p className={styles.sub}>
-          Code mit Auge fürs Detail – UI, UX und sauberes Frontend-Engineering aus einer Hand.
+          Coder mit Auge fürs Detail – UI, UX und sauberes Frontend-Engineering aus einer Hand.
         </p>
         <a href="" className={styles.cta}>
           Kontakt aufnehmen (kommt bald)
